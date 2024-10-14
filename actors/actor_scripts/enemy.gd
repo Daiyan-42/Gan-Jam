@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 
 @export var SPEED : float = 50
+var damage : int = 10 #for now
 var direction : int = 0
 var player_nearby : bool = false
 @onready var sprite : AnimatedSprite2D = $AnimatedSprite2D
@@ -31,7 +32,7 @@ func _physics_process(delta):
 func _on_detection_zone_body_entered(body):
 	if body.name == "Player":
 		player_nearby = true
-		print("attacking")
+		print("attacking") #for debugging
 		if self.position.x > body.position.x:
 			direction = -1
 		elif self.position.x < body.position.x:
@@ -43,6 +44,6 @@ func _on_detection_zone_body_entered(body):
 func _on_detection_zone_body_exited(body):
 	if body.name == "Player":
 		player_nearby = false
-		print("resetting")
+		print("resetting") #for debugging
 		direction = 0
 	pass # Replace with function body.

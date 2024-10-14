@@ -1,10 +1,10 @@
 extends CharacterBody2D
 
-
 const SPEED = 130.0
 const JUMP_VELOCITY = -300.0
 
 @onready var sprite : AnimatedSprite2D = $AnimatedSprite2D
+var health : int = 50 #for now
 
 func _physics_process(delta):
 	# Add the gravity.
