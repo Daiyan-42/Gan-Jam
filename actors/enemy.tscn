@@ -1,0 +1,97 @@
+[gd_scene load_steps=14 format=3 uid="uid://c5cqgnwjjmya3"]
+
+[ext_resource type="Script" path="res://actors/actor_scripts/enemy.gd" id="1_igl4u"]
+[ext_resource type="Texture2D" uid="uid://bs4dqmmr1ncjh" path="res://assets/sprites/0x72_DungeonTilesetII_v1.7.png" id="2_h6mrl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gry75"]
+atlas = ExtResource("2_h6mrl")
+region = Rect2(16, 432, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t1t7s"]
+atlas = ExtResource("2_h6mrl")
+region = Rect2(48, 432, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_epdbk"]
+atlas = ExtResource("2_h6mrl")
+region = Rect2(80, 432, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_layl5"]
+atlas = ExtResource("2_h6mrl")
+region = Rect2(112, 432, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xcfu6"]
+atlas = ExtResource("2_h6mrl")
+region = Rect2(144, 432, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ybt4b"]
+atlas = ExtResource("2_h6mrl")
+region = Rect2(176, 432, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4wmy"]
+atlas = ExtResource("2_h6mrl")
+region = Rect2(208, 432, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iks0w"]
+atlas = ExtResource("2_h6mrl")
+region = Rect2(240, 432, 32, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o57et"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gry75")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t1t7s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_epdbk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_layl5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xcfu6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ybt4b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y4wmy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iks0w")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_irjyr"]
+radius = 8.0
+height = 24.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jcwme"]
+size = Vector2(168, 20)
+
+[node name="Enemy" type="CharacterBody2D"]
+script = ExtResource("1_igl4u")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_o57et")
+autoplay = "default"
+frame_progress = 0.809341
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -12)
+shape = SubResource("CapsuleShape2D_irjyr")
+
+[node name="DetectionZone" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionZone"]
+position = Vector2(0, -12)
+shape = SubResource("RectangleShape2D_jcwme")
+
+[connection signal="body_entered" from="DetectionZone" to="." method="_on_detection_zone_body_entered"]
+[connection signal="body_exited" from="DetectionZone" to="." method="_on_detection_zone_body_exited"]

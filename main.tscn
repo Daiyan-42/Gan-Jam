@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://b55g3qq6jhiir"]
+[gd_scene load_steps=4 format=3 uid="uid://b55g3qq6jhiir"]
 
 [ext_resource type="PackedScene" uid="uid://d2onffwrwxvbc" path="res://actors/player.tscn" id="1_ctj3m"]
+[ext_resource type="PackedScene" uid="uid://c5cqgnwjjmya3" path="res://actors/enemy.tscn" id="2_qfxw0"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_gstga"]
 
@@ -10,6 +11,7 @@
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(4, 4)
+position_smoothing_enabled = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(0, 16)
@@ -17,3 +19,6 @@ metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("WorldBoundaryShape2D_gstga")
+
+[node name="Enemy" parent="." instance=ExtResource("2_qfxw0")]
+position = Vector2(61, 10)
