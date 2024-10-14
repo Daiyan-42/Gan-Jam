@@ -32,7 +32,6 @@ func _physics_process(delta):
 func _on_detection_zone_body_entered(body):
 	if body.name == "Player":
 		player_nearby = true
-		print("attacking") #for debugging
 		if self.position.x > body.position.x:
 			direction = -1
 		elif self.position.x < body.position.x:
@@ -44,6 +43,5 @@ func _on_detection_zone_body_entered(body):
 func _on_detection_zone_body_exited(body):
 	if body.name == "Player":
 		player_nearby = false
-		print("resetting") #for debugging
 		direction = 0
 	pass # Replace with function body.
