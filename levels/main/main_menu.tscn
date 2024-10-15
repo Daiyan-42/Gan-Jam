@@ -1,0 +1,153 @@
+[gd_scene load_steps=13 format=3 uid="uid://efmo4lxgjxmf"]
+
+[ext_resource type="Script" path="res://levels/main/main_menu.gd" id="1_6abnh"]
+[ext_resource type="FontFile" uid="uid://bkf32tb1ofaot" path="res://assets/[font] monogram/ttf/monogram.ttf" id="2_qqmxm"]
+[ext_resource type="FontFile" uid="uid://c7tpug25xw527" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_qwkve"]
+[ext_resource type="FontFile" uid="uid://hamxarm6pwva" path="res://assets/fonts/PixelOperator8.ttf" id="4_xm730"]
+[ext_resource type="Texture2D" uid="uid://chisunohgpjl6" path="res://assets/[main menu] Layers/sky_lightened.png" id="5_3s3yn"]
+[ext_resource type="Texture2D" uid="uid://b11tmfgtxfu8s" path="res://assets/[main menu] Layers/clouds_bg.png" id="5_efssm"]
+[ext_resource type="Texture2D" uid="uid://bgygg8d5p5s3q" path="res://assets/[main menu] Layers/glacial_mountains.png" id="6_v1fpx"]
+
+[sub_resource type="Theme" id="Theme_uuyi6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sa3mv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qgrei"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_clrf2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6sdyb"]
+
+[node name="Main Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_uuyi6")
+script = ExtResource("1_6abnh")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 93.0
+offset_top = -219.0
+offset_right = 219.0
+offset_bottom = -97.0
+grow_vertical = 0
+
+[node name="StartButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../ExitButton")
+theme_override_colors/font_hover_color = Color(0.776471, 0.780392, 0.94902, 1)
+theme_override_colors/font_pressed_color = Color(0.398439, 0.496966, 0.989117, 1)
+theme_override_colors/font_focus_color = Color(0.737255, 0.713726, 0.917647, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_qqmxm")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/focus = SubResource("StyleBoxEmpty_sa3mv")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_sa3mv")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_sa3mv")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_sa3mv")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_sa3mv")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_sa3mv")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_sa3mv")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_sa3mv")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_sa3mv")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_sa3mv")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_sa3mv")
+text = "Start"
+
+[node name="OptionsButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.776471, 0.780392, 0.94902, 1)
+theme_override_colors/font_pressed_color = Color(0.4, 0.498039, 0.988235, 1)
+theme_override_colors/font_focus_color = Color(0.737255, 0.713726, 0.917647, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_qqmxm")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qgrei")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_clrf2")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_clrf2")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_clrf2")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_clrf2")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_clrf2")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_clrf2")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_clrf2")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_clrf2")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_clrf2")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_clrf2")
+text = "Options"
+
+[node name="ExitButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+focus_neighbor_bottom = NodePath("../StartButton")
+theme_override_colors/font_hover_color = Color(0.774677, 0.779708, 0.948114, 1)
+theme_override_colors/font_pressed_color = Color(0.4, 0.498039, 0.988235, 1)
+theme_override_colors/font_focus_color = Color(0.737255, 0.713726, 0.917647, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_qqmxm")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6sdyb")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_6sdyb")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_6sdyb")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_6sdyb")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_6sdyb")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_6sdyb")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_6sdyb")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_6sdyb")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_6sdyb")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_6sdyb")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_6sdyb")
+text = "Exit"
+
+[node name="TitleLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 255.0
+offset_top = 76.0
+offset_right = 955.0
+offset_bottom = 132.0
+theme_override_fonts/font = ExtResource("3_qwkve")
+theme_override_font_sizes/font_size = 56
+text = "Gan-Jam Games"
+
+[node name="SubLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 870.0
+offset_top = 145.0
+offset_right = 948.0
+offset_bottom = 168.0
+theme_override_fonts/font = ExtResource("4_xm730")
+theme_override_font_sizes/font_size = 16
+text = "by ODS"
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Sky" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Sky"]
+position = Vector2(576, 319)
+scale = Vector2(3.01042, 2.96296)
+texture = ExtResource("5_3s3yn")
+
+[node name="CloudBG" type="ParallaxLayer" parent="ParallaxBackground"]
+texture_filter = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/CloudBG"]
+position = Vector2(578.5, 325.5)
+scale = Vector2(2.9974, 2.97685)
+texture = ExtResource("5_efssm")
+
+[node name="Mountains" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Mountains"]
+position = Vector2(578.5, 321.5)
+scale = Vector2(2.9974, 2.97685)
+texture = ExtResource("6_v1fpx")
+
+[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
