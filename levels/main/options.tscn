@@ -1,0 +1,90 @@
+[gd_scene load_steps=5 format=3 uid="uid://rj30455vtdif"]
+
+[ext_resource type="Script" path="res://levels/main/options.gd" id="1_u580h"]
+[ext_resource type="FontFile" uid="uid://c7tpug25xw527" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_4tudb"]
+[ext_resource type="FontFile" uid="uid://bkf32tb1ofaot" path="res://assets/[font] monogram/ttf/monogram.ttf" id="3_3cik5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aimfc"]
+
+[node name="Options" type="Node2D"]
+script = ExtResource("1_u580h")
+
+[node name="Labels" type="Node" parent="."]
+
+[node name="Label" type="Label" parent="Labels"]
+offset_left = 66.0
+offset_top = 120.0
+offset_right = 310.0
+offset_bottom = 158.0
+theme_override_fonts/font = ExtResource("2_4tudb")
+theme_override_font_sizes/font_size = 32
+text = "Controls"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="Labels"]
+offset_left = 66.0
+offset_top = 201.0
+offset_right = 306.0
+offset_bottom = 227.0
+theme_override_fonts/font = ExtResource("3_3cik5")
+theme_override_font_sizes/font_size = 32
+text = "Move - AD/Arrow Keys"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label3" type="Label" parent="Labels"]
+offset_left = 66.0
+offset_top = 271.0
+offset_right = 186.0
+offset_bottom = 297.0
+theme_override_fonts/font = ExtResource("3_3cik5")
+theme_override_font_sizes/font_size = 32
+text = "Attack - J"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label4" type="Label" parent="Labels"]
+offset_left = 66.0
+offset_top = 236.0
+offset_right = 210.0
+offset_bottom = 262.0
+theme_override_fonts/font = ExtResource("3_3cik5")
+theme_override_font_sizes/font_size = 32
+text = "Jump - Space"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label5" type="Label" parent="Labels"]
+offset_left = 66.0
+offset_top = 306.0
+offset_right = 222.0
+offset_bottom = 332.0
+theme_override_fonts/font = ExtResource("3_3cik5")
+theme_override_font_sizes/font_size = 32
+text = "Pause - Esc/P"
+metadata/_edit_use_anchors_ = true
+
+[node name="BackButton" type="Button" parent="."]
+offset_left = 66.0
+offset_top = 543.0
+offset_right = 111.0
+offset_bottom = 574.0
+theme_override_colors/font_hover_color = Color(0.677637, 0.685784, 0.995263, 1)
+theme_override_colors/font_pressed_color = Color(0.560474, 0.397194, 0.984644, 1)
+theme_override_colors/font_focus_color = Color(0.331024, 0.696081, 0.965552, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_3cik5")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxEmpty_aimfc")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_aimfc")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_aimfc")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_aimfc")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_aimfc")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_aimfc")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_aimfc")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_aimfc")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_aimfc")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_aimfc")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_aimfc")
+text = "Back
+"
+
+[connection signal="pressed" from="BackButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
